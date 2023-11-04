@@ -1,0 +1,38 @@
+# Pliki stanu Terraform
+*.tfstate
+*.tfstate.*
+
+# Pliki logu
+*.tflog
+
+# Pliki konfiguracyjne, które mogą zawierać tajne informacje
+*.tfvars
+
+# Lokalne pliki Terraform plan
+*.tfplan
+
+# Pliki ignorowane podczas działania terraform
+.terraform/
+.terraform.lock.hcl
+
+# Wyklucz wszystkie pliki "override"
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Wyklucz pliki, które mogą zawierać poufne dane
+secrets.tfvars
+credentials.json
+*.pem
+*.key
+*.cert
+*.crt
+
+# Wyklucz pliki, które mogą być generowane podczas lokalnego działania
+.terraformrc
+terraform.rc
+
+# Autoryzacja
+terraform-gcp-auth.json
+
