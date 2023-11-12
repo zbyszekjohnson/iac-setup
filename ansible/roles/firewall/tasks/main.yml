@@ -1,0 +1,7 @@
+---
+# tasks file for roles/firewall
+- name: Enable firewall
+  ufw:
+    rule: allow
+    port: '80,443'
+    proto: tcp

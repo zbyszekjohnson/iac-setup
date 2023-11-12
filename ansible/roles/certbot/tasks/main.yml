@@ -1,0 +1,19 @@
+---
+# tasks file for roles/certbot
+- name: Install software-properties-common
+  apt:
+    name: software-properties-common
+    state: present
+
+- name: Install Certbot and its Nginx plugin
+  apt:
+    name: 
+      - certbot
+      - python3-certbot-nginx
+    state: present
+    update_cache: yes
+
+- name: Obtain a Let's Encrypt certificate
+  command: certbot --nginx -d ksolopa.com --non-interactive --agree-tos --email krystian.solopa@gmail.com --redirect
+  args:
+    creates: /etc/letsencrypt/live/ksolopa.com/fullchain.pem
