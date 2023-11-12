@@ -1,0 +1,11 @@
+---
+# tasks file for roles/nginx
+- name: Install Nginx
+  apt:
+    name: nginx
+    state: latest
+
+- name: Reload Nginx to apply new configuration
+  service:
+    name: nginx
+    state: started
